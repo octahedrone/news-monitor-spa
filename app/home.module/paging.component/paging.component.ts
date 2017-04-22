@@ -15,7 +15,7 @@ export class PagingComponent implements OnInit,OnChanges{
     @Input()
     size:number=1;//items array length
     @Input()
-    range:number=3;//number of pages
+    range:number=2;//number of pages
 
     currentPage: number;
     totalPages: number;

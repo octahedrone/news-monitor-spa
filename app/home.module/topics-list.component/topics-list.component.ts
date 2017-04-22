@@ -13,12 +13,13 @@ export class TopicsListComponent{
     searchText:string;
 
     count: number = 0;//topics array length
-    offset: number = 0;//number of first item from the (next) page
+    offset: number;//number of first item from the (next) page
     limit: number = 7;// how many items we want to choose
 
     init(topics:Topic[], count:number, searchText:string){
         this.topicsTotal=topics;
         this.count=count;
+        this.offset=0;
         this.searchText=searchText;
         this.topicsToView=this.topicsTotal.slice(this.offset,this.offset+this.limit);
     }
