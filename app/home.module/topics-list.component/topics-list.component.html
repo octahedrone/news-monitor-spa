@@ -1,0 +1,14 @@
+<div class="panel panel-default listmargin" *ngIf="topicsToView">
+    <div class="panel-heading">
+        <h3 class="panel-title">Result for: {{searchText}}</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="list-group">
+            <topic-list-item *ngFor="let topic of topicsToView" [topic]="topic"></topic-list-item>
+        </div>
+
+        <paging [offset]="offset" [limit]="limit" [size]="count" (pageChange)="onPageChange($event)"></paging>
+
+    </div>
+</div>

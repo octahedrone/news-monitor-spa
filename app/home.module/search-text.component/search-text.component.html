@@ -1,0 +1,9 @@
+<div class="input-group topmargin">
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button"
+                        (click)="sendRequest(textSearchInput.value)">
+                    Search
+                </button>
+                </span>
+    <input type="text" class="form-control" #textSearchInput (keyup.enter)="sendRequest(textSearchInput.value)">
+</div>
