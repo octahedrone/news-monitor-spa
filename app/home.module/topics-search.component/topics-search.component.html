@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-10">
         <text-search (searchRequested)="searchTextHandler($event)"></text-search>
-        <topics-list></topics-list>
+        <topics-list (nextPageRequested)="nextPageRequestedHandler($event)"></topics-list>
     </div>
 
     <div class="col-md-2">

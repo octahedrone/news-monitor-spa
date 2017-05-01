@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {Article} from "../shared/article";
 
 @Component({
     moduleId:module.id,
@@ -7,5 +8,14 @@ import {Component} from "@angular/core";
     styleUrls:['./article-list-item.component.css']
 })
 export class ArticleListItemComponent{
+    @Input()
+    article:Article;
+    @Input()
+    isChecked:boolean;
+    @Output()
+    itemChanged=new EventEmitter<Article>();
 
+    onChange(){
+            this.itemChanged.emit(this.article);
+    }
 }

@@ -1,0 +1,29 @@
+<div class="dropdown col-md-offset-2" *ngIf="newsSources">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        News source dropdown
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li *ngFor="let newsSource of newsSources">
+            <a role="menuitem" tabindex="-2" (click)="onNewsSourceSelect(newsSource)">{{newsSource}}</a>
+        </li>
+
+    </ul>
+</div>
+
+<div class="row" *ngIf="articleList">
+    <div class="col-md-10 col-md-offset-1" style="margin-top: 15px">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Articles from {{articleList.newsSourceName}} </h3>
+
+                <article-list-item  *ngFor="let article of articleList.articles" [article]="article" (itemChanged)="handlerItemChanged($event)" [isChecked]="isArticleChecked(article)">
+                </article-list-item>
+
+            </div>
+
+            <paging [offset]="offset" [limit]="limit" [size]="count" (pageChange)="onPageChange($event)"></paging>
+
+        </div>
+    </div>
+</div>

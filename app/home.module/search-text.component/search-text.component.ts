@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core'
+import {TopicsSearchRequest} from "../shared/topics-search-request";
 
 @Component({
     moduleId:module.id,
@@ -8,9 +9,9 @@ import {Component, EventEmitter, Output} from '@angular/core'
 })
 export class TextSearchComponent{
     @Output()
-    searchRequested=new EventEmitter<string>();
+    searchRequested=new EventEmitter<TopicsSearchRequest>();
 
     sendRequest(topicsSearchText:string){
-        this.searchRequested.emit(topicsSearchText);
+        this.searchRequested.emit(new TopicsSearchRequest(topicsSearchText,0));
     }
 }
