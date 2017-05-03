@@ -13,6 +13,7 @@ var router_1 = require("@angular/router");
 var home_module_1 = require("./home.module/home.module");
 var edit_module_1 = require("./edit.module/edit.module");
 var forms_1 = require("@angular/forms");
+var details_module_1 = require("./details.module/details.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,7 +24,7 @@ AppModule = __decorate([
         imports: [router_1.RouterModule.forRoot([
                 { path: '', redirectTo: '/home', pathMatch: 'full' }
             ]),
-            platform_browser_1.BrowserModule, home_module_1.HomeModule, edit_module_1.EditModule, forms_1.FormsModule],
+            platform_browser_1.BrowserModule, home_module_1.HomeModule, edit_module_1.EditModule, forms_1.FormsModule, details_module_1.DetailsModule],
         declarations: [app_component_1.AppComponent],
         bootstrap: [app_component_1.AppComponent]
     })

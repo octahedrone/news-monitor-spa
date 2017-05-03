@@ -1,5 +1,4 @@
 import {NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
 
 //modules
 import {EditRoutingModule} from "./edit-routing.module";
@@ -12,7 +11,7 @@ import {ArticleListItemComponent} from "./article-list-item.component/article-li
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
-    imports:[CommonModule,EditRoutingModule, SharedModule,FormsModule],
+    imports:[EditRoutingModule, SharedModule,FormsModule],
     declarations:[TopicsEditComponent, ArticleListComponent,ArticleListItemComponent]
 })
 export class EditModule{

@@ -1,0 +1,12 @@
+{
+  "request":{
+    "topicId":2
+  },
+  "topic":{
+    "id":2,
+    "date":"01.01.2017",
+    "title": "Awesome topic",
+    "keyword": "bla-bla-bla",
+    "description":"some text"
+  }
+}

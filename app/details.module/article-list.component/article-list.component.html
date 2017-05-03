@@ -1,0 +1,2 @@
+<article-list-item *ngFor="let article of articles" [article]="article"></article-list-item>
+<paging [offset]="articleRequest.offset" [limit]="limit" [size]="count" (pageChange)="onPageChange($event)"></paging>

@@ -6,7 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
 //modules
 var edit_routing_module_1 = require("./edit-routing.module");
 var shared_module_1 = require("../shared/shared.module");
@@ -22,7 +21,7 @@ var EditModule = (function () {
 }());
 EditModule = __decorate([
     core_1.NgModule({
-        imports: [common_1.CommonModule, edit_routing_module_1.EditRoutingModule, shared_module_1.SharedModule, forms_1.FormsModule],
+        imports: [edit_routing_module_1.EditRoutingModule, shared_module_1.SharedModule, forms_1.FormsModule],
         declarations: [topics_edit_component_1.TopicsEditComponent, article_list_component_1.ArticleListComponent, article_list_item_component_1.ArticleListItemComponent]
     })
 ], EditModule);

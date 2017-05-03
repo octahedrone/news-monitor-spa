@@ -5,7 +5,6 @@ import 'rxjs/Rx';
 
 import {ArticleListResponse} from "./article-list-response";
 import {ArticleListRequest} from "./article-list-request";
-import {createErrorResponse} from "angular-in-memory-web-api";
 
 @Injectable()
 export class ArticleListService{

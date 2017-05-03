@@ -7,12 +7,13 @@ import {RouterModule} from '@angular/router'
 import{HomeModule} from './home.module/home.module'
 import {EditModule} from "./edit.module/edit.module";
 import {FormsModule} from "@angular/forms";
+import {DetailsModule} from "./details.module/details.module";
 
 @NgModule({
     imports:      [ RouterModule.forRoot([
         {path:'', redirectTo:'/home', pathMatch:'full'}
     ]),
-        BrowserModule,HomeModule,EditModule,FormsModule],
+        BrowserModule,HomeModule,EditModule,FormsModule,DetailsModule],
     declarations: [ AppComponent],
     bootstrap:    [ AppComponent]
 })

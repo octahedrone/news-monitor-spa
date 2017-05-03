@@ -3,13 +3,13 @@
     "topicSearchText":"searched text"
   },
   "topicsFound":[
-    {"name":"Topic 1"},
-    {"name":"Topic 2"},
-    {"name":"Topic 3"},
-    {"name":"Topic 4"},
-    {"name":"Topic 5"},
-    {"name":"Topic 6"},
-    {"name":"Topic 7"}
+    {"id":1,"name":"Topic 1"},
+    {"id":2,"name":"Topic 2"},
+    {"id":3,"name":"Topic 3"},
+    {"id":4,"name":"Topic 4"},
+    {"id":5,"name":"Topic 5"},
+    {"id":6,"name":"Topic 6"},
+    {"id":7,"name":"Topic 7"}
   ],
   "totalFound":50
 }
