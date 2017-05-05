@@ -1,1 +1,0 @@
-{"version":3,"file":"article-list-request.js","sourceRoot":"","sources":["article-list-request.ts"],"names":[],"mappings":";AAAA;IAII,4BAAY,cAAqB,EAAE,aAAqB,EAAE,YAAoB;QAC1E,IAAI,CAAC,cAAc,GAAC,cAAc,CAAC;QACnC,IAAI,CAAC,aAAa,GAAC,aAAa,CAAC;QACjC,IAAI,CAAC,YAAY,GAAC,CAAC,YAAY,CAAC,GAAC,YAAY,GAAC,CAAC,CAAC;IACpD,CAAC;IACL,yBAAC;AAAD,CAAC,AATD,IASC;AATY,gDAAkB"}
