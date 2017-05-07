@@ -6,7 +6,8 @@ import {TopicsEditComponent} from "./topics-edit.component/topics-edit.component
 @NgModule({
     imports:[
         RouterModule.forChild([
-            {path:'edit', component:TopicsEditComponent}
+            {path:'edit', component:TopicsEditComponent},
+            {path:'edit/:id', component:TopicsEditComponent}
         ])
     ],
     exports:[RouterModule]

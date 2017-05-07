@@ -1,18 +1,12 @@
-
 import {NewsSourceArticles} from "./news-source-articles";
+import {TopicInfo} from "./topic-info";
 
 export class Topic{
-    date: string;
-    title:string;
-    keyword:string;
-    description:string;
+    info:TopicInfo;
     articles:NewsSourceArticles[];
 
-    constructor(date:string, title:string, keyword:string, description: string, articles:NewsSourceArticles[]){
-        this.date=date;
-        this.title=title;
-        this.keyword=keyword;
-        this.description=description;
+    constructor(info:TopicInfo, articles:NewsSourceArticles[]){
+        this.info=info;
         this.articles=articles;
     }
 

@@ -19,6 +19,8 @@ export class ArticleListComponent implements OnInit{
     articleRequested=new EventEmitter<ArticleListRequest>();
     @Output()
     newPageRequested=new EventEmitter<ArticleListRequest>();
+    @Output()
+    articleListOnInit= new EventEmitter();
 
     count: number = 0;//topics array length
     offset: number;//number of first item from the (next) page
@@ -29,9 +31,10 @@ export class ArticleListComponent implements OnInit{
     }
 
     ngOnInit(){
-        this.service.getNewsSourceNames().subscribe(
+      this.articleListOnInit.emit();
+/*        this.service.getNewsSourceNames().subscribe(
             (response:string[])=>this.newsSources=response
-        )
+        )*/
     }
 
     onNewsSourceSelect(newsSourceName:string){

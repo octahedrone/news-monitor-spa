@@ -1,6 +1,6 @@
 import {Topic} from "../topic";
 
-export class EditTopicRequest{
+export class PostTopicRequest{
     topic:Topic;
 
     constructor(topic:Topic){
