@@ -8,8 +8,7 @@ import {Article} from "../shared/article";
     moduleId:module.id,
     selector:'article-list',
     templateUrl:'./article-list.component.html',
-    styleUrls:['./article-list.component.css'],
-    providers:[ArticleListService]
+    styleUrls:['./article-list.component.css']
 })
 export class ArticleListComponent implements OnInit{
     articleList:NewsSourceArticles;
