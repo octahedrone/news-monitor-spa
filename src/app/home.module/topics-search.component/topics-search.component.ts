@@ -24,7 +24,7 @@ export class TopicsSearchComponent{
         this.topicsSearchService.search(request).subscribe(
             (response:TopicsSearchResponse)=>{
                 this.lastSearchRequest=response.request;
-                this.topicsList.init(response.topicsFound,response.totalFound,response.request.topicSearchText);
+                this.topicsList.init(response.topicsFound,response.totalFound,response.request.nameSearchPattern);
             });
     }
 

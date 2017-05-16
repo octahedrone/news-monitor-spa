@@ -13,8 +13,9 @@ export class TopicsSearchService{
     }
 
     search(request:TopicsSearchRequest):Observable<TopicsSearchResponse>{
-        return this.http.get('/assets/get-topics.json')
+        return this.http.post('http://localhost:9000/v1/topics/search', request)
             .map((response:Response)=>{
+                console.log(response.json());
                 return response.json();
         });
     }

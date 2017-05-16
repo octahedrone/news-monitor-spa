@@ -1,11 +1,13 @@
+import {PageInfo} from '../../shared/paging.component/page-info'
+
 export class TopicsSearchRequest{
-    topicSearchText:string;
-    itemsPerPage:number;
-    articleNumber:number;
+    nameSearchPattern:string;
+    private page: PageInfo;
 
     constructor(topicsSearchText:string, articleNumber:number,itemsPerPage?:number){
-        this.topicSearchText=topicsSearchText;
-        this.articleNumber=articleNumber;
-        this.itemsPerPage=(itemsPerPage)?itemsPerPage:7;
+        this.nameSearchPattern=topicsSearchText;
+        this.page=new PageInfo();
+        this.page.itemsPerPage=(itemsPerPage)?itemsPerPage:7;
+        this.page.pageNumber=articleNumber/this.page.itemsPerPage;
     }
 }
