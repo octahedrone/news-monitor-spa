@@ -11,7 +11,7 @@ import {GetArticlesRequest} from "../shared/topic-details.service/get-articles-r
 })
 export class ArticleListComponent implements OnInit{
     @Input()
-    topicId: number;
+    topicId: string;
     articles:Article[];
     articleRequest: GetArticlesRequest;
 
@@ -21,11 +21,11 @@ export class ArticleListComponent implements OnInit{
     constructor(private topicDetailsService:TopicDetailsService){
         this.limit=5;
         let offset=0;
-        this.articleRequest=new GetArticlesRequest(this.topicId,offset,this.limit);
+        this.articleRequest=new GetArticlesRequest(offset,this.limit);
     }
 
     ngOnInit(){
-        this.topicDetailsService.getArticles(this.articleRequest)
+        this.topicDetailsService.getArticles(this.topicId,this.articleRequest)
             .subscribe((response:Article[])=>this.articles=response);
 
         this.topicDetailsService.getArticlesCountById(this.topicId)
@@ -35,9 +35,7 @@ export class ArticleListComponent implements OnInit{
     onPageChange(offset:number){
         this.articleRequest.offset=offset;
 
-        this.topicDetailsService.getArticles(this.articleRequest)
+        this.topicDetailsService.getArticles(this.topicId,this.articleRequest)
             .subscribe((response:Article[])=>this.articles=response);
     }
-
-
 }

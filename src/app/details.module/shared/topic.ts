@@ -1,5 +1,5 @@
 export class Topic{
-    id:number;
+    id:string;
     date:string;
     title:string;
     keyword:string;

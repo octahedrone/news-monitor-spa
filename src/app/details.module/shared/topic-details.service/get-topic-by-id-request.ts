@@ -1,6 +1,6 @@
 export class GetTopicByIdRequest{
-    private topicId:number;
-    constructor(topicId: number){
+    public topicId:string;
+    constructor(topicId: string){
         this.topicId=topicId;
     }
 }

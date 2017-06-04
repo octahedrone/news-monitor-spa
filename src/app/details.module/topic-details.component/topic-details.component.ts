@@ -20,10 +20,10 @@ export class TopicDetailsComponent implements OnInit{
 
     ngOnInit() {
         this.activatedRoute.params.forEach((params: Params) => {
-            let id = +params["id"];
+            let id = params["id"];
             this.topicDetailsService.getTopicById(new GetTopicByIdRequest(id))
-                .subscribe((response:GetTopicByIdResponse)=>{
-                    this.topic=response.topic;
+                .subscribe((response:Topic)=>{
+                    this.topic=response;
                 })
         });
     }
