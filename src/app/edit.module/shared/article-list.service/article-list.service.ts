@@ -15,20 +15,20 @@ export class ArticleListService{
     }
 
     getNewsSourceNames():Observable<string[]>{
-        return this.http.get('/assets/edit/news-source-names.edit.json')
+        return this.http.get('http://localhost:9000/v1/news-sources/names')
             .map((response:Response)=>response.json());
     }
     getArticleList(request:ArticleListRequest):Observable<ArticleListResponse>{
-        return this.http.get('/assets/edit/get-article-list.edit.json')
+        return this.http.post('http://localhost:9000/v1/news-sources/articles',request)
             .map((response:Response)=> response.json());
     }
 
-    getTopicInfoById(topicId:number):Observable<TopicInfo>{
-        return this.http.get('/assets/edit/get-topic-info-by-id.edit.json')
+    getTopicInfoById(topicId:string):Observable<TopicInfo>{
+        return this.http.get('http://localhost:9000/v1/topics/'+topicId+'/info')
           .map((response:Response)=>response.json());
     }
-    getTopicArticlesById(topicId:number):Observable<NewsSourceArticles[]>{
-      return this.http.get('/assets/edit/get-topic-articles-by-id.edit.json')
+    getTopicArticlesById(topicId:string):Observable<NewsSourceArticles[]>{
+      return this.http.get('http://localhost:9000/v1/topics/'+topicId+'/news-sources/articles')
         .map((response:Response)=>response.json());
     }
 }

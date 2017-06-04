@@ -11,6 +11,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 import {TopicInfo} from "../shared/topic-info";
 import {PutTopicRequest} from "../shared/edit-topic.service/put-topic-request";
 import {NewsSourceArticles} from "../shared/news-source-articles";
+import {isEmpty} from "rxjs/operator/isEmpty";
 
 @Component({
     moduleId:module.id,
@@ -22,7 +23,7 @@ export class TopicsEditComponent implements OnInit{
     @ViewChild(ArticleListComponent)
     articleListComponent: ArticleListComponent;
     lastArticleListRequest:ArticleListRequest;
-    topicId:number;
+    topicId:string;
     topicInfo:TopicInfo;
 
     constructor(private articleListService:ArticleListService,
@@ -33,8 +34,8 @@ export class TopicsEditComponent implements OnInit{
 
     ngOnInit(){
       this.activatedRouter.params.forEach((params: Params)=>{
-          this.topicId=+params["id"];
-          if(!isNaN(this.topicId))
+          this.topicId=params["id"];
+          if(Boolean(this.topicId))
             this.articleListService.getTopicInfoById(this.topicId)
               .subscribe((response:TopicInfo)=>this.topicInfo=response);
       })
@@ -44,7 +45,7 @@ export class TopicsEditComponent implements OnInit{
       this.articleListService.getNewsSourceNames()
         .subscribe((response:string[])=>this.articleListComponent.newsSources=response);
 
-      if(!isNaN(this.topicId))
+      if(Boolean(this.topicId))
         this.articleListService.getTopicArticlesById(this.topicId)
           .subscribe((response:NewsSourceArticles[])=>this.articleListComponent.newsSourceCheckedArticles=response);
     }
@@ -69,13 +70,17 @@ export class TopicsEditComponent implements OnInit{
 
     onSubmit(){
         let topic:Topic=new Topic(this.topicInfo,this.articleListComponent.newsSourceCheckedArticles);
-        if(this.topicId){
-          this.editTopicService.putTopic(new PutTopicRequest(this.topicId,topic));
-          this.router.navigate(['/details',this.topicId]);
+        if(Boolean(this.topicId)){
+          this.editTopicService.putTopic(new PutTopicRequest(this.topicId,topic))
+            .subscribe(
+              (response:number)=> this.router.navigate(['/details',this.topicId])
+            );
         }
         else{
-          this.editTopicService.postTopic(new PostTopicRequest(topic));
-          this.router.navigate(['/home']);
+          this.editTopicService.postTopic(new PostTopicRequest(topic))
+            .subscribe(
+              (response:number)=>this.router.navigate(['/home'])
+            );
         }
     }
 }

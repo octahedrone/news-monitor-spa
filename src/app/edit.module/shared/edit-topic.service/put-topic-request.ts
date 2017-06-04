@@ -1,9 +1,9 @@
 import {Topic} from "../topic";
 export class PutTopicRequest{
-  private id:number;
+  private id:string;
   private topic:Topic;
 
-  constructor(id:number, topic:Topic){
+  constructor(id:string, topic:Topic){
     this.id=id;
     this.topic=topic;
   }
